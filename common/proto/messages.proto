@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "patterns-examples/common;gen";
+
+package messages;
+
+// UserMessage определяет сообщение с информацией о пользователе.
+message UserMessage {
+    string name = 1;
+    int32 age = 2;
+    string email = 3;
+}
