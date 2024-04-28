@@ -1,11 +1,6 @@
 version: v1
 plugins:
-  # - plugin: buf.build/grpc/go
-  #   out: common/messages
-  #   opt:
-  #     - paths=import
-  #     - require_unimplemented_servers=false
   - plugin: buf.build/protocolbuffers/go
-    out: common/messages
+    out: .
     opt:
       - paths=import

@@ -1,12 +1,21 @@
 syntax = "proto3";
 
-option go_package = "patterns-examples/common;gen";
+option go_package = "common/messages;messages";
 
 package messages;
 
-// UserMessage определяет сообщение с информацией о пользователе.
-message UserMessage {
+message NsqMessage {
     string name = 1;
-    int32 age = 2;
-    string email = 3;
+    oneof message {
+        NewOrder new_order = 2;
+        PaymentSuccessfull payment_successfull = 3;
+    }
+}
+
+message NewOrder {
+    int64 id = 1;
+}
+
+message PaymentSuccessfull {
+    int64 order_id = 1;
 }
